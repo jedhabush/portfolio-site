@@ -1,0 +1,278 @@
+// WideScreens
+
+//Hover Effect @mixin for the project page
+@mixin hover-info-ratios($top, $left, $height, $width, $font-size) {
+  .projects-elements {
+    &__info {
+      border-radius: 3%;
+      background-color: rgba(#ffffff, 0.7);
+      z-index: 5;
+      position: absolute;
+      margin: 0 auto;
+      top: $top;
+      left: $left;
+      height: $height;
+      width: $width;
+      text-align: center;
+      color: #000;
+      visibility: hidden;
+      -webkit-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+      -webkit-transform: rotateY(90deg);
+      transform: rotateY(90deg);
+      font-size: $font-size;
+    }
+  }
+}
+//Xlarge screens
+@include mediaXl {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+    //Project Hover Effect
+    @include hover-info-ratios(4%, 5%, 55%, 88%, 0.5rem);
+  }
+}
+
+// Desktop and Laptops
+@include mediaLg {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+    //Project Hover Effect
+    @include hover-info-ratios(4%, 8%, 55%, 85%, 0.5rem);
+  }
+
+  // The Main Hello World Animation
+  .hello-world {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    height: 160px;
+    overflow: hidden;
+  }
+}
+
+// Tablets and Small Laptops
+@include mediaMd {
+  main {
+    align-items: center;
+    text-align: center;
+
+    .lg-heading {
+      line-height: 1;
+      margin: 1rem;
+    }
+  }
+
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+
+    //Chaning the overlay
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px;
+  }
+
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+    //personal photo smaller
+    .portrait {
+      background: url("../img/potrait_small.jpg");
+      width: 150px;
+      height: 150px;
+    }
+  }
+  //about page responsive
+  .about-info {
+    grid-template-areas:
+      "bioimage"
+      "bio"
+      "job1"
+      "job2"
+      "job3";
+
+    grid-template-columns: 1fr;
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+    //Project Hover Effect
+    @include hover-info-ratios(4%, 8%, 55%, 85%, 0.5rem);
+    //background-color: green;
+  }
+
+  // The Main Hello World Animation
+  .hello-world {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    height: 160px;
+    overflow: hidden;
+  }
+}
+//-------------------------
+// Smart phones and Smaller
+@include mediaSm {
+  main {
+    align-items: center;
+    text-align: center;
+
+    .lg-heading {
+      line-height: 1;
+      //margin: 1rem;
+      align-items: center;
+    }
+  }
+
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+
+    //Chaning the overlay
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px;
+  }
+
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+    //personal photo smaller
+    .portrait {
+      background: url("../img/potrait_small.jpg");
+      width: 150px;
+      height: 150px;
+    }
+  }
+  //about page responsive
+  .about-info {
+    grid-template-areas:
+      "bioimage"
+      "bio"
+      "job1"
+      "job2"
+      "job3";
+
+    grid-template-columns: 1fr;
+  }
+
+  // Font Sizes
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: 120;
+    //margin-left: 10px;
+    &.lg-heading {
+      font-size: 3rem;
+    }
+  }
+
+  main#home h1 {
+    margin-top: 9vh;
+    //margin: 10vh;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+
+    //Project Hover Effect
+    @include hover-info-ratios(4%, 8%, 55%, 85%, 0.5rem);
+    //background-color: green;
+  }
+  // Main Page Hellow world Animation
+  .hello-world {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    transform: translate(-60%, -60%);
+    height: 160px;
+    overflow: hidden;
+
+    //----
+    font-family: "Lato", sans-serif;
+    font-size: 10px;
+    line-height: 40px;
+    color: #ecf0f1;
+
+    //---
+    &__container {
+      font-weight: 200;
+      overflow: hidden;
+      height: 40px;
+      padding: 0 10px;
+
+      &:before {
+        content: "[";
+        left: 0;
+      }
+
+      &:after {
+        content: "]";
+        position: absolute;
+        right: 0;
+      }
+      &:after,
+      &:before {
+        position: absolute;
+        top: 0;
+
+        color: $secondary-color;
+        font-size: 12px;
+        line-height: 40px;
+      }
+
+      &__list {
+        margin-top: 0;
+        padding-left: 40px;
+        text-align: left;
+        list-style: none;
+      }
+    }
+  }
+}
+//-----------------------------------------------
+// Responsive Hover effects in the project file
+/*Ensuring the hover effect is responsive corss all devices*/
+@include mediaLarge1 {
+  .projects {
+    //Project Hover Effect
+    @include hover-info-ratios(4%, 8%, 55%, 88%, 0.6rem);
+    //background-color: green;
+  }
+}
+
+@include mediaLarge2 {
+  .projects {
+    //Project Hover Effect
+    @include hover-info-ratios(4%, 5%, 55%, 88%, 0.7rem);
+    //background-color: green;
+  }
+}
+
+@include mediaLarge3 {
+  .projects {
+    //Project Hover Effect
+    @include hover-info-ratios(4%, 5%, 70%, 88%, 0.9rem);
+    //background-color: green;
+  }
+}
