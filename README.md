@@ -1,3 +1,9 @@
+# NOW LIVE
+https://jedhabushportfolio.netlify.app/index.html 
+
+# Image of application
+![alt text](https://github.com/jedhabush/portfolio-site/blob/main/PortfolioIMG.png)
+
 # Portfolio-Website
 
 ### Description of project:
@@ -21,9 +27,5 @@ At some point in the future, I plan to re-design the portfolio using ReactJs. Th
 5- Multiple devices responsiveness
 
 
-# NOW LIVE
-https://jedhabushportfolio.netlify.app/index.html 
 
-# Image of application
-![alt text](https://github.com/jedhabush/portfolio-site/blob/main/PortfolioIMG.png)
 
